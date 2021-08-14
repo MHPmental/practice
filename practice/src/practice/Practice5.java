@@ -1,12 +1,10 @@
 package practice;
 
-
 import java.io.*;
-import java.util.*;
+import java.util.StringTokenizer;
 
-
-class Main {
-	public static void main(String[] args) throws IOException{
+public class Practice5 {
+	public void practice5_1() throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int a = Integer.parseInt(br.readLine());
 		int min = 1000000;
@@ -22,5 +20,6 @@ class Main {
 			}
 		}
 		System.out.println(min+" "+max);
+		
 	}
-}
+}	

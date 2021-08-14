@@ -63,9 +63,27 @@ public class Practice1 {
 		System.out.println(a % b);
 	}
 	public void practice1_10() {
-		
+		Scanner sc = new Scanner(System.in);
+		int a, b, c;
+		a = sc.nextInt();
+		b = sc.nextInt();
+		c = sc.nextInt();
+		System.out.println((a+b)%c);
+		System.out.println(((a%c)+(b%c))%c);
+		System.out.println((a*b)%c);
+		System.out.println(((a%c)*(b%c))%c);
 	}
 	public void practice1_11() {
-		
+		Scanner sc = new Scanner(System.in);
+		int a, b,c,d,e;
+		a = sc.nextInt();
+		b = sc.nextInt();
+		e = b/100;
+		d = (b - e*100)/10;
+		c = b - e*100 -d*10;
+		System.out.println(a*c);
+		System.out.println(a*d);
+		System.out.println(a*e);
+		System.out.println(a * b);
 	}
 }
