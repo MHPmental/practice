@@ -1,0 +1,136 @@
+package practice;
+
+import java.io.*;
+import java.util.StringTokenizer;
+
+public class Practice7 {
+	public void practice7_1() throws IOException{
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		String a = br.readLine();
+		int b = a.charAt(0);
+		System.out.println(b);
+	}
+	public void practice7_2() throws IOException{
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		int a = Integer.parseInt(br.readLine());
+		String b = br.readLine();
+		int sum = 0;
+		for(int i=0;i<a;i++) {
+			sum+=Character.getNumericValue(b.charAt(i));
+		}
+		System.out.println(sum);
+	}
+	public void practice7_3() throws IOException{
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		String a = br.readLine();
+		int[] result = new int[26];
+		for(int i=0;i<result.length;i++) {
+			result[i] = -1;
+		}
+		//97 = 'a'
+		for(int i=0;i<a.length();i++) {
+			int b = a.charAt(i);
+			if(result[b-97]==-1) {
+				result[b-97] = i;
+			}
+		}
+		for(int i=0;i<result.length;i++) {
+			System.out.print(result[i]+" ");
+		}
+		
+	}
+	public void practice7_4() throws IOException{
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st;
+		int testCnt = Integer.parseInt(br.readLine());
+		for(int i=0;i<testCnt;i++){
+			st = new StringTokenizer(br.readLine()," ");
+			int x = Integer.parseInt(st.nextToken());
+			String y = st.nextToken();
+			for(int j=0;j<y.length();j++) {
+				for(int h=0;h<x;h++) {
+					System.out.print(y.charAt(j));
+				}
+			}
+			System.out.println();
+			
+		}
+	}
+	public void practice7_5() throws IOException{
+		//단어를 받아서 가장 많이 사용된 알파벳이 무엇인가
+		//1-1 입력받을 버퍼 선언
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		//1-2. 사용된 문자수를 저장할 int 배열선언 및 초기화
+		int[] storedCnt = new int[26];
+		for(int i=0; i<storedCnt.length;i++) {
+			storedCnt[i] = 0;
+		}
+		//2. 문자를 입력받는다.
+		//3. 대소문자 구별이 없으므로 toLowwercase 사용
+		String str = br.readLine().toLowerCase();
+		//4. 문자열 길이만큼 돌리면서 배열에 저장을한다.
+		for(int i=0;i<str.length();i++) {
+			int a = str.charAt(i);
+			storedCnt[a-97]++;
+		}
+		//5. 배열에서의 최대값을 구한다.
+		int max = 0;
+		int max2 = -1;
+		for(int i=0;i<storedCnt.length;i++) {
+			if(max<storedCnt[i]) {
+				max = storedCnt[i];
+				max2 = i;
+			}
+		}
+		int maxCnt = 0;
+		for(int i=0;i<storedCnt.length;i++) {
+			if(max==storedCnt[i]) {
+				maxCnt++;
+			}
+		}
+		if(maxCnt>1) {
+			System.out.println("?");
+		}else {
+			char asdf = (char)(max2+97);
+			System.out.println(Character.toUpperCase(asdf));
+		}
+	}
+	public void practice7_6() throws IOException{
+		//문자열에서 문자가 몇개인가.
+		//1. 입력받을 버퍼 및 스트링 토큰 선언하고 문자를 자른다.
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st = new StringTokenizer(br.readLine()," ");
+		//2. st next가 없을때까지 돌리고 숫자늘리기
+		int cnt=0;
+		while(st.hasMoreTokens()) {
+			cnt++;
+			st.nextToken();
+		}
+		System.out.println(cnt);
+	}
+	public void practice7_7() throws IOException{
+		//두 숫자를 받아서 뒤집은 다음 최댓값을 구한다.
+		//1. 입력받을 버퍼 및 스트링 토큰 선언하고 문자를 자른다.
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st = new StringTokenizer(br.readLine()," ");
+		int a = reverseNum(st.nextToken());
+		int b = reverseNum(st.nextToken());
+		if(a>b) {
+			System.out.println(a);
+		}else {
+			System.out.println(b);
+		}
+		
+		
+	}
+	public int reverseNum(String a) {
+		int result=0;
+		StringBuffer sb = new StringBuffer();
+		for(int i=a.length()-1;i>=0;i--) {
+			sb.append(a.charAt(i));
+		}
+		result = Integer.parseInt(sb.toString());
+		return result;
+	}
+	
+}

@@ -8,22 +8,22 @@ import java.util.*;
 class Main {
 	public static void main(String[] args) throws IOException{
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		int cnt=0;
-		String a = br.readLine();
-		for(int i=1;i<=Integer.parseInt(a);i++) {
-			if(i<10) {
-				cnt++;
-			}else if(i<100) {
-				cnt++;
-			}else {
-				int x = i/100;
-				int y = (i-x*100)/10;
-				int z = (i-x*100-y*10);
-				if((y-x)==(z-y)) {
-					cnt++;
-				}
-			}
+		StringTokenizer st = new StringTokenizer(br.readLine()," ");
+		int a = reverseNum(st.nextToken());
+		int b = reverseNum(st.nextToken());
+		if(a>b) {
+			System.out.println(a);
+		}else {
+			System.out.println(b);
 		}
-		System.out.println(cnt);
+	}
+	public static int reverseNum(String a) {
+		int result=0;
+		StringBuffer sb = new StringBuffer();
+		for(int i=a.length()-1;i>=0;i--) {
+			sb.append(a.charAt(i));
+		}
+		result = Integer.parseInt(sb.toString());
+		return result;
 	}
 }

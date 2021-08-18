@@ -5,8 +5,8 @@ import java.io.IOException;
 public class PracticeMain {
 
 	public static void main(String[] args) throws IOException {
-		Practice6 p6 = new Practice6();
-		p6.practice6_3();
+		Practice7 p7 = new Practice7();
+		p7.practice7_7();
 	}
 
 }
