@@ -132,5 +132,42 @@ public class Practice7 {
 		result = Integer.parseInt(sb.toString());
 		return result;
 	}
+	public void practice7_8() throws IOException{
+		//문자를 입력 받아서 다이얼 돌리는데 걸리는 시간 구하기
+		//1. 입력받을 버퍼 선언
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		//1. 입력 받고 받은 문자 대문자
+		String a = br.readLine().toLowerCase();
+		char[] chs = a.toCharArray();
+		int result=0;
+		for(int i=0;i<chs.length;i++) {
+			result += charNum(chs[i]);
+		}
+		System.out.println(result);
+		
+	}
+	public static int charNum(char a) {
+		if(a=='a'||a=='b'||a=='c') {
+			return 3;
+		}else if(a=='d'||a=='e'||a=='f') {
+			return 4;
+		}else if(a=='g'||a=='h'||a=='i') {
+			return 5;
+		}else if(a=='j'||a=='k'||a=='l') {
+			return 6;
+		}else if(a=='m'||a=='n'||a=='o') {
+			return 7;
+		}else if(a=='p'||a=='q'||a=='r'||a=='s') {
+			return 8;
+		}else if(a=='t'||a=='u'||a=='v') {
+			return 9;
+		}else {
+			return 10;
+		}
+	}
+	
+	public void practice7_9() throws IOException{
+		
+	}
 	
 }
