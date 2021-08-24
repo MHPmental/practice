@@ -7,23 +7,33 @@ import java.util.*;
 
 class Main {
 	public static void main(String[] args) throws IOException{
-		//A B C 를 입력 받아서 손익 분기점을 구하는 문제 A+xB<xC 인지점이 있는지를 구하는 문제
+		//문자열을 입력받아서 크로아티아 문자갯수 구하기
+		//앞에서부터 천천히 나가면서 경우의수를 하면서 숫자 늘리기해야지
+		//끝에 올경우를 생각해야됨..
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		StringTokenizer st = new StringTokenizer(br.readLine()," ");
-		int a = Integer.parseInt(st.nextToken());
-		int b = Integer.parseInt(st.nextToken());
-		int c = Integer.parseInt(st.nextToken());
-		int result = -1;
-		//결국 A < x(C-B)가 되는 x값을 구하는문제
-		// 100*x > 1099 가되는 
-		//일단 c가 b보다 작거나 같으면 안된다
-		//나눠지는 몫에 +1
-		//아니면 1099/100=? 10+1
-		if(c<=b) {
-			result = -1;
-		}else {
-			result = (a/(c-b))+1;
+		String str = br.readLine();
+		int cnt = 0;
+		for(int i=0;i<str.length();i++) {
+			if(i<str.length()-1&&str.charAt(i)=='c'&&str.charAt(i+1)=='=') {
+				i++;
+			}else if(i<str.length()-1&&str.charAt(i)=='c'&&str.charAt(i+1)=='-') {
+				i++;
+			}else if(i<str.length()-2&&str.charAt(i)=='d'&&str.charAt(i+1)=='z'&&str.charAt(i+2)=='=') {
+				i++;
+				i++;
+			}else if(i<str.length()-1&&str.charAt(i)=='d'&&str.charAt(i+1)=='-') {
+				i++;
+			}else if(i<str.length()-1&&str.charAt(i)=='l'&&str.charAt(i+1)=='j') {
+				i++;
+			}else if(i<str.length()-1&&str.charAt(i)=='n'&&str.charAt(i+1)=='j') {
+				i++;
+			}else if(i<str.length()-1&&str.charAt(i)=='s'&&str.charAt(i+1)=='=') {
+				i++;
+			}else if(i<str.length()-1&&str.charAt(i)=='z'&&str.charAt(i+1)=='=') {
+				i++;
+			}
+			cnt++;
 		}
-		System.out.println(result);
+		System.out.println(cnt);
 	}
 }

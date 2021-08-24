@@ -167,6 +167,66 @@ public class Practice7 {
 	}
 	
 	public void practice7_9() throws IOException{
+		//문자열을 입력받아서 크로아티아 문자갯수 구하기
+		//앞에서부터 천천히 나가면서 경우의수를 하면서 숫자 늘리기해야지
+		//끝에 올경우를 생각해야됨..
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		String str = br.readLine();
+		int cnt = 0;
+		for(int i=0;i<str.length();i++) {
+			if(i<str.length()-1&&str.charAt(i)=='c'&&str.charAt(i+1)=='=') {
+				i++;
+			}else if(i<str.length()-1&&str.charAt(i)=='c'&&str.charAt(i+1)=='-') {
+				i++;
+			}else if(i<str.length()-2&&str.charAt(i)=='d'&&str.charAt(i+1)=='z'&&str.charAt(i+2)=='=') {
+				i++;
+				i++;
+			}else if(i<str.length()-1&&str.charAt(i)=='d'&&str.charAt(i+1)=='-') {
+				i++;
+			}else if(i<str.length()-1&&str.charAt(i)=='l'&&str.charAt(i+1)=='j') {
+				i++;
+			}else if(i<str.length()-1&&str.charAt(i)=='n'&&str.charAt(i+1)=='j') {
+				i++;
+			}else if(i<str.length()-1&&str.charAt(i)=='s'&&str.charAt(i+1)=='=') {
+				i++;
+			}else if(i<str.length()-1&&str.charAt(i)=='z'&&str.charAt(i+1)=='=') {
+				i++;
+			}
+			cnt++;
+		}
+		System.out.println(cnt);
+	}
+	public void practice7_10() throws IOException{
+		//그룹단어 체크
+		//aavvdd 는 avd가 연속으로 나오므로 그룹단어 aavvdda는 avda이므로 a가 2번 나와서 그룹단어가 아니다.
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		//들어올 문자 수
+		int trycnt = Integer.parseInt(br.readLine());
+		for(int i=0; i<trycnt;i++) {
+			String str = br.readLine();
+			StringBuffer sb = new StringBuffer();
+			//1. 일단 문자열 연속되는걸 없애는걸 목표로 해서  aavvdda > avda
+			for(int j=0; j<str.length();j++) {
+				if(j==0) {
+					sb.append(str.charAt(j));
+				}
+				else if(j>0&&str.charAt(j)==str.charAt(j-1)){
+					
+				}
+				else {
+					sb.append(str.charAt(j));
+				}
+			}
+			//2. avda에서 2번 연속으로 나오는 친구가 있으면 문제있는친구
+			for(int j=0;j<sb.length();j++) {
+				
+			}
+		}
+		
+		
+		
+		
+		
 		
 	}
 	
