@@ -202,6 +202,7 @@ public class Practice7 {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		//들어올 문자 수
 		int trycnt = Integer.parseInt(br.readLine());
+		int result=0;
 		for(int i=0; i<trycnt;i++) {
 			String str = br.readLine();
 			StringBuffer sb = new StringBuffer();
@@ -218,12 +219,20 @@ public class Practice7 {
 				}
 			}
 			//2. avda에서 2번 연속으로 나오는 친구가 있으면 문제있는친구
-			for(int j=0;j<sb.length();j++) {
-				
+			int a=0;
+			for(int j=0;j<sb.length()-1;j++) {
+				for(int k=j+1;k<sb.length();k++) {
+					if(sb.charAt(j)==sb.charAt(k)) {
+						a=-1;
+					}
+				}
+			}
+			if(a==0) {
+				result++;
 			}
 		}
 		
-		
+		System.out.println(result);
 		
 		
 		
