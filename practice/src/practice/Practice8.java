@@ -24,4 +24,7 @@ public class Practice8 {
 		}
 		System.out.println(result);
 	}
+	public void practice8_2() throws IOException{
+		
+	}
 }
