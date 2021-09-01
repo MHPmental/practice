@@ -1,4 +1,4 @@
-package practice;
+package practice.practice5;
 
 import java.io.*;
 import java.util.StringTokenizer;

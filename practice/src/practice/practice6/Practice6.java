@@ -1,4 +1,4 @@
-package practice;
+package practice.practice6;
 
 import java.io.*;
 
