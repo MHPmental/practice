@@ -1,30 +1,30 @@
 package practice.practice8._4;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
+import java.util.*;
 
 public class Main {
 
 	public static void main(String[] args) throws IOException {
-		//분수를 순서대로 표현한다.
-		// 1/1 > 1/2 > 2/1 > 3/1 > 2/2 > 1/3 > 1/4 이런식
+		//달팽이가 올라가고 내려가고
+		//c를 올라갈때 a를 올라가고 b를 떨어진다고 했을때 걸리는 날짜
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		int a = Integer.parseInt(br.readLine());
-		//1 2 3 4 5 6 홀수는 큰/작 짝수는 작/큰
-		int b = 0;
-		int c = 0;
-		while(a>0) {
-			b++;
-			c = a;
-			a = a-b;
+		StringTokenizer st = new StringTokenizer(br.readLine()," ");
+		int a = Integer.parseInt(st.nextToken());
+		int b = Integer.parseInt(st.nextToken());
+		int c = Integer.parseInt(st.nextToken());
+		int d = 0;
+		d = (c-a)/(a-b);
+		int e = (c-a)%(a-b);
+		if(c==a) {
+			System.out.println(1);
 		}
-		if(b%2==1) {
-			int d = b+1;
-			System.out.println((d-c)+"/"+(c));
+		else if(e==0) {
+			System.out.println(d+1);
 		}else {
-			int d = b+1;
-			System.out.println((c)+"/"+(d-c));
+			System.out.println(d+2);
 		}
+		
+		
 	}
 }
