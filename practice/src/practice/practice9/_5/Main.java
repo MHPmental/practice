@@ -1,4 +1,4 @@
-package practice.practice9._2;
+package practice.practice9._5;
 
 import java.io.*;
 import java.util.*;
@@ -9,30 +9,29 @@ public class Main {
 		//소수의 갯수 구하기
 		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		
-		int a = Integer.parseInt(br.readLine());
-		StringTokenizer st=new StringTokenizer(br.readLine()," ");
-		int result = 0;
-		for(int i=0; i<a; i++) {
-			int x = Integer.parseInt(st.nextToken());
-			if(isNum(x)) {
-				result++;
+		int a;
+		while((a=Integer.parseInt(br.readLine()))!=0) {
+			int count=0;
+			for(int i=a+1;i<=a*2;i++) {
+				if(isPrime(i)) {
+					count++;
+				}
 			}
-			
+			System.out.println(count);
 		}
-		System.out.println(result);
+		
 	}
-	public static boolean isNum(int a) {
+	public static boolean isPrime(int a) {
 
-		boolean check=false;
-		if(a==1) {
+		boolean check=true;
+		if(a<2) {
 			check=false;
-		}if(a==2) {
+		}else if(a==2) {
 			check=true;
 		}else {
 			for(int j=2;j<=Math.sqrt(a);j++) {
 				if(a%j==0) {
-					check=true;
+					check=false;
 					break;
 				}
 			}
