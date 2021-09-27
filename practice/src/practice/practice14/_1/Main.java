@@ -8,9 +8,7 @@ public class Main {
 	public static boolean[] visit;
 	
 	public static void main(String[] args) throws IOException {
-		//글자를 입력받아서 길이순 정렬
-		//입력받아서 나이순 정렬 후 가입순 정렬
-		
+		//n m 수열 구하기
 		
 		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
