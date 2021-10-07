@@ -12,7 +12,7 @@ public class Main {
 	public static void main(String[] args) throws IOException {
 		//가장 긴 증가하는 부분 수열
 		//수열 A가 주어졌을때 가장 긴 증가하는 부분 수열을 구하는 프로그램
-		//
+		//dd
 		
 		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
