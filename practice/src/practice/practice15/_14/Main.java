@@ -15,6 +15,8 @@ public class Main {
 		//dddddDDD
 		
 		
+		//s
+		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
 		n = Integer.parseInt(br.readLine());
