@@ -15,7 +15,7 @@ public class Main {
 		//dddddDDD
 		
 		
-		//s
+		//sSS
 		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
