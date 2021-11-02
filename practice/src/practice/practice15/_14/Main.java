@@ -13,7 +13,7 @@ public class Main {
 		//가장 긴 증가하는 부분 수열
 		//수열 A가 주어졌을때 가장 긴 증가하는 부분 수열을 구하는 프로그램
 		//dddfdf
-		//1234asdASDFFasd
+		//1234asdASDFFasdDDD
 		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
