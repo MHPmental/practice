@@ -22,8 +22,8 @@ public class Main {
 		//출력
 		//물건들의 가치합의 최댓닶을 출력한다.
 		
-		//해결방안
-
+		//해결방안 11
+		
 
 		//입력을 담당할 버퍼리더
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
