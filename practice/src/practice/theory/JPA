@@ -1,0 +1,72 @@
+이론
+
+ORM이 무엇인가
+
+Object-relational mapping(객체관계매핑)의 줄임말로써
+-객체는 객체대로 설계하고 관계형 데이터베이스는 관계형 데이터베이스대로 설계하는것을 말한다.
+-ORM 프레임워크가 중간에서 매핑해준다.
+-대중적인 언어에는 대부분 존재
+-객체와 RDB 두 기둥위에 있는 기술
+
+EJB
+-과거의 자바 표준
+-과거의 ORM
+-문제점 : 코드가 매우 지저분하고 API의 복잡성이 높아서 속도가 느리다.
+
+Hibernate
+ ORM 프레임워크, Open Source SW
+
+JPA란 무엇인가
+-Java Persistence API의 줄임말
+-현재 java의 ORM 기술 표준으로 인터페이스의 모음집
+-즉 실제로 동작하는 것이 아니다.
+-JPA인터페이스를 구현한 대표적인 오픈소스가 Hibernate라고 할 수 있다.
+-JPA 2.1표준 명세를 구현한 3가지 구현체 : Hibernate, EclipseLink, DataNucleus
+
+Spring Framework
+-Application 프레임 워크, Open Source SW
+-EJB의 여러 문제를 해결하고 엔터프라이즈 애플리케이션 개발을 좀 더 쉽게 하기 위한 목적으로 만들었다.
+
+JPA의 동작과정
+
+-JPA는 애플리케이션과 JDBC 사이에서 동작한다.
+ -개발자가 JPA를 사용하면 JPA내부에서 JDBC API를 사용하여 SQL을 호출하여 DB와 통신한다.
+ -개발자가 직접 JDBC API를 쓰는 것이 아니다.
+ 
+저장과정
+-EX)MemberDAP에서 객체를 저장하고 싶을 때
+ -개발자는 JPA에 Member객체를 넘긴다.
+ -JPA는
+  -Member 엔티티를 분석한다.
+  -SQL을 생성한다.
+  -JDBC API를 사용하여 SQL을 DB에 넘겨준다.
+  
+조회과정
+-EX)Member 객체를 조회하고 싶을 때
+ -개발자는 member의 pk값을 JPA에 넘긴다.
+ -JPA는
+  -엔티티의 매핑정보를 바탕으로 적절한 SELECT SQL을 생성한다.
+  -JDBC API를 사용하여 SQL을 DB에 날린다.
+  -DB로부터 결과를 받아온다.
+  -결과를 객체에 모두 매핑한다.
+ -Query를 JPA가 만들어 주기 때문에 Object와 RDB 간의 패러다임 불일치를 해결할 수 있다.
+ 
+JPA를 사용해야 하는 이유
+ 1. SQL중심적인 개발에서 객체 중심으로 개발
+ 2. 생산성
+  - JPA를 사용하는 것은 마치 Java Collection에 데이터를 넣었다 빼는 것처럼 사용할 수 있게 만든 것이다.
+  - 간단한 CRUD
+   ex)
+   -저장:jpa.persist(member)
+   -조회:Member member = jpa.find(memberId)
+   -수정:member.setName("name")
+   -삭제:jpa.remove(member)
+  -특히 수정이 굉장히 간단하다.
+   -객체를 변경하면 그냥 알아서 DB에 UPDATE Query가 나간다.
+ 3. 유지보수
+  -기존 : 필드 변경시 모든 SQL을 수정해야한다.
+  -JPA : 필드만 추가하면 된다. SQL은 JPA가 처리하기 때문에 손댈 것이 없다.
+ 4. Object와 RDB간의 패러다임 불일치 해결
+  -JPA와 상속
+   -
+ 
