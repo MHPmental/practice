@@ -68,5 +68,31 @@ JPA를 사용해야 하는 이유
   -JPA : 필드만 추가하면 된다. SQL은 JPA가 처리하기 때문에 손댈 것이 없다.
  4. Object와 RDB간의 패러다임 불일치 해결
   -JPA와 상속
-   -
+   -ex)저장
+    -개발자
+     -jpa.persist(album);
+    -JPA
+     -INSERT INTO ITEM ...
+     -INSERT INTO ALBUM ...
+   -ex)조회
+    -개발자
+     -Album album = jpa.find(Album.class, albumId);
+    -JPA
+     -SELECT I.*,A>* FROM ITEM I JOIN ALNUM A ON I.ITEM_ID = A.ITEM_ID
+   -JPA와 연관관계
+    -객체의 참조로 연관관계 저장 가능
+     -member.setTeam(team);
+     -jpa.persist(member);
+   -JPA와 객체 그래프 탐색
+    -신뢰할 수 있는 엔티티, 계층
+    -내가 아닌 다른 개발자가 직젖ㅂ 구현한 DAO에서 가져오는 경우
+     -DAO에서 직접 어떤 쿼리를 날렸는지 확인하지 않는 이상, 그래프 형태의 관련된 객체들을 모두 잘 가져왔는지 알 수가 없다.
+     -즉, 반환한 엔티티를 신뢰하고 사용할 수 없다.
+    -JPA를 통해서 가져오는 경우
+     -객체 그래프를 왅전히 자유롭게 탐색할 수 있게 된다.
+     -지연 로딩 전략 사용
+      -관련된 객체를 사용하는 그 시점에 SELECT Query를 날려서 객체를 가져온다.
+   -JPA와 비교하기
+ 
+ 
  
