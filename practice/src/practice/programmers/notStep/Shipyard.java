@@ -31,7 +31,7 @@ public class Shipyard {
                 //가장 큰 작업을 호출해 온다.
                 int tmp = pq.poll();
                 //작업이 0보다 크다면 작업이 남아있는 것으므로 작업을 1빼준뒤에 다시 pq에 넣어준다.
-                if(0 < tmp){
+                if(1 < tmp){
                     pq.offer(tmp - 1);
                 }
             }            
