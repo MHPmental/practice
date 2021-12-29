@@ -94,7 +94,7 @@ public class Arithmetic {
 				if(ari[mid]=='-') {
 					result = Math.min(result,pro(1,start,mid)-pro(0,mid+1,end));
 				}
-				//연산자가 +일 경우에는 최소 + 최소
+				//연산자가 +일 경우에는 최소 + 최소ss
 				else {
 					result = Math.min(result,pro(1,start,mid)+pro(1,mid+1,end));
 				}
